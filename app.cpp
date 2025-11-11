@@ -42,16 +42,27 @@ int main(){
   
   while (run == true){    
     std::cout << "\nOptions:" << std::endl;
+    //std::cout << "\t0: Create virtual MIDI device" << std::endl;
     std::cout << "\t1: Receive MIDI data from a device" << std::endl;
     std::cout << "\t2: Send MIDI data to a device" << std::endl;
     std::cout << "\t3: Load MIDI data from a file" << std::endl;
     std::cout << "\t4: Save current MIDI data to a file" << std::endl;
     std::cout << "\t5: Print data" << std::endl;
     std::cout << "\t6: Exit (default)" << std::endl;
-    option = read_option(6);        
+    option = read_option(6);   
+    
 
+     // 0 
+    /*------------------------------------------------------------------------  
+    RtMidiIn midiin{};  
+    if (option <= 0) { // Create virtual device
+      
+      
+      midiin.openVirtualPort	(	std::string( "Virtual MIDI Input" )	);
+
+    }
   // 1 ------------------------------------------------------------------------    
-    if (option <= 1) { // Read Midi from device
+    else */if (option <= 1) { // Read Midi from device
       RtMidiIn midiin{};  
         
       midiin.ignoreTypes( false, false, false );// Don't ignore anything
