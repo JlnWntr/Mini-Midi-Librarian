@@ -2,6 +2,18 @@
 //  g++ -std=c++17 virtual.cpp rtmidi/RtMidi.cpp -o virtual -Wall -D__MACOSX_CORE__ -framework CoreMIDI -framework CoreAudio -framework CoreFoundation
 
 
+/*
+https://en.wikipedia.org/wiki/MIDI_beat_clock
+
+Clock events are sent at a rate of 24 pulses per quarter note. 
+
+clock    (decimal 248, hex 0xF8)
+start    (decimal 250, hex 0xFA)
+continue (decimal 251, hex 0xFB)
+stop     (decimal 252, hex 0xFC)
+
+*/
+
 #include <iostream>
 #include <cstdlib>
 #include <unistd.h> 
